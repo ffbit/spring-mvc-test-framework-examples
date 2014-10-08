@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
-@ContextConfiguration("classpath:servlet-context.xml")
+@ContextConfiguration("file:src/main/resources/servlet-context.xml")
 public class MovieControllerWebAppIT {
     @Autowired
     private WebApplicationContext wac;
