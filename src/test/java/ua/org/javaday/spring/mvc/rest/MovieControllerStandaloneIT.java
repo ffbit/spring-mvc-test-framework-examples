@@ -15,6 +15,7 @@ import ua.org.javaday.spring.mvc.rest.exception.MovieNotFoundException;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertThat;
 import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.when;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -28,7 +29,7 @@ public class MovieControllerStandaloneIT {
     @Mock
     private MovieRepository movieRepository;
 
-    private Movie movie = new Movie(1, "Movie", 8.7f);
+    private Movie movie = new Movie(1, "Futurama", 8.7f);
 
     @InjectMocks
     private MovieController movieController = new MovieController();
@@ -44,21 +45,25 @@ public class MovieControllerStandaloneIT {
 
     @Test
     public void itShouldFindMovie() throws Exception {
-        given(movieRepository.findById(1)).willReturn(movie);
+        when(movieRepository.findOne(1)).thenReturn(movie);
 
-        mockMvc.perform(get("/movies/1").accept(APPLICATION_JSON))
+        mockMvc.perform(get("/movies/1")
+                .accept(APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType("application/json;charset=UTF-8"))
+                .andExpect(content()
+                        .contentType("application/json;charset=UTF-8"))
                 .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.title").value("Movie"))
+                .andExpect(jsonPath("$.title").value("Futurama"))
                 .andExpect(jsonPath("$.rating").value(8.7));
     }
 
     @Test
     public void itShouldNotFindMovie() throws Exception {
-        given(movieRepository.findById(-1)).willReturn(null);
+        given(movieRepository.findOne(-1)).willReturn(null);
 
-        MvcResult mvcResult = mockMvc.perform(get("/movies/-1").accept(APPLICATION_JSON))
+        MvcResult mvcResult = mockMvc
+                .perform(get("/movies/-1")
+                        .accept(APPLICATION_JSON))
                 .andExpect(status().isNotFound())
                 .andReturn();
 

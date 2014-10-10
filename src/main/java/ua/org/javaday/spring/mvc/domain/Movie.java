@@ -1,22 +1,23 @@
 package ua.org.javaday.spring.mvc.domain;
 
-public class Movie {
-    private int id;
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "MOVIES")
+public class Movie extends AbstractPersistable<Integer> {
     private String title;
     private float rating;
 
+    private Movie() {
+    }
+
     public Movie(int id, String title, float rating) {
-        this.id = id;
+        setId(id);
         this.title = title;
         this.rating = rating;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getTitle() {

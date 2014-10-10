@@ -26,14 +26,14 @@ public class MovieControllerTest {
 
     @Test
     public void itShouldFindMovie() {
-        given(movieRepository.findById(1)).willReturn(movie);
+        given(movieRepository.findOne(1)).willReturn(movie);
 
         assertThat(movieController.getMovie(1), is(movie));
     }
 
     @Test(expected = MovieNotFoundException.class)
     public void itShouldNotFoundMovie() {
-        given(movieRepository.findById(-1)).willReturn(null);
+        given(movieRepository.findOne(-1)).willReturn(null);
 
         movieController.getMovie(-1);
     }

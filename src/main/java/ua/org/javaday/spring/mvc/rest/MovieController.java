@@ -19,7 +19,7 @@ public class MovieController {
     @ResponseBody
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public Movie getMovie(@PathVariable int id) {
-        Movie movie = movieRepository.findById(id);
+        Movie movie = movieRepository.findOne(id);
 
         if (movie != null) {
             return movie;
