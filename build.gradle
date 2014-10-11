@@ -60,4 +60,5 @@ test {
         events "passed", "skipped", "failed", "standardOut", "standardError"
         exceptionFormat "full"
     }
+    exclude(["**/AllTests*"])
 }
