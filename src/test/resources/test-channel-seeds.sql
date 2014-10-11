@@ -1,0 +1,3 @@
+INSERT INTO CHANNELS (id, title) VALUES
+  (1, 'MTV')
+;
