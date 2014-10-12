@@ -51,7 +51,7 @@ public class ChannelControllerWebAppIT {
     }
 
     @Test
-    public void itShouldFindMovie() throws Exception {
+    public void itShouldFindChannel() throws Exception {
         mockMvc.perform(get("/channels/1").accept(APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content()
@@ -61,7 +61,7 @@ public class ChannelControllerWebAppIT {
     }
 
     @Test
-    public void itShouldNotFindMovie() throws Exception {
+    public void itShouldNotFindChannel() throws Exception {
         MvcResult mvcResult = mockMvc
                 .perform(get("/channels/-1").accept(APPLICATION_JSON))
                 .andExpect(status().isNotFound())

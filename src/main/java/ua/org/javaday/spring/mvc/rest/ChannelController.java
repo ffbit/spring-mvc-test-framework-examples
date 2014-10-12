@@ -18,7 +18,7 @@ public class ChannelController {
 
     @ResponseBody
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Channel getMovie(@PathVariable int id) {
+    public Channel getChannel(@PathVariable int id) {
         Channel channel = channelRepository.findOne(id);
 
         if (channel != null) {

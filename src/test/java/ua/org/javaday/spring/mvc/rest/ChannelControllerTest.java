@@ -25,17 +25,17 @@ public class ChannelControllerTest {
     private ChannelController channelController = new ChannelController();
 
     @Test
-    public void itShouldFindMovie() {
+    public void itShouldFindChannel() {
         when(channelRepository.findOne(1)).thenReturn(channel);
 
-        assertThat(channelController.getMovie(1), is(channel));
+        assertThat(channelController.getChannel(1), is(channel));
     }
 
     @Test(expected = ChannelNotFoundException.class)
-    public void itShouldNotFoundMovie() {
+    public void itShouldNotFoundChannel() {
         when(channelRepository.findOne(-1)).thenReturn(null);
 
-        channelController.getMovie(-1);
+        channelController.getChannel(-1);
     }
 
 }

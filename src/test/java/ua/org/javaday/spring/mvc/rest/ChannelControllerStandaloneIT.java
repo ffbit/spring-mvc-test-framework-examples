@@ -44,7 +44,7 @@ public class ChannelControllerStandaloneIT {
     }
 
     @Test
-    public void itShouldFindMovie() throws Exception {
+    public void itShouldFindChannel() throws Exception {
         when(channelRepository.findOne(1)).thenReturn(channel);
 
         mockMvc.perform(get("/channels/1").accept(APPLICATION_JSON))
@@ -56,7 +56,7 @@ public class ChannelControllerStandaloneIT {
     }
 
     @Test
-    public void itShouldNotFindMovie() throws Exception {
+    public void itShouldNotFindChannel() throws Exception {
         given(channelRepository.findOne(-1)).willReturn(null);
 
         MvcResult mvcResult = mockMvc
