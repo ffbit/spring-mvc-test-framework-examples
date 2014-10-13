@@ -18,11 +18,11 @@ public class ChannelControllerTest {
     @Mock
     private ChannelRepository channelRepository;
 
-    @Mock
-    private Channel channel;
-
     @InjectMocks
     private ChannelController channelController = new ChannelController();
+
+    @Mock // dummy
+    private Channel channel;
 
     @Test
     public void itShouldFindChannel() {
