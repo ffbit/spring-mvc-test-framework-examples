@@ -11,7 +11,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.web.context.WebApplicationContext;
-import ua.org.javaday.spring.mvc.dao.ChannelRepository;
 import ua.org.javaday.spring.mvc.rest.exception.ChannelNotFoundException;
 
 import javax.transaction.Transactional;
@@ -37,9 +36,6 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 public class ChannelControllerWebAppIT {
     @Autowired
     private WebApplicationContext wac;
-
-    @Autowired
-    private ChannelRepository channelRepository;
 
     private MockMvc mockMvc;
 
