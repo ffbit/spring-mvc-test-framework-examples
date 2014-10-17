@@ -28,8 +28,8 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppC
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
 @ContextConfiguration({
-        "classpath:servlet-context.xml",
-        "classpath:persistence-context.xml"
+        "file:src/main/webapp/WEB-INF/servlet-context.xml",
+        "file:src/main/webapp/WEB-INF/persistence-context.xml"
 })
 @Transactional
 @Sql(scripts = "classpath:test-channel-seeds.sql")
