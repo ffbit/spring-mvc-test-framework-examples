@@ -1,1 +1,28 @@
-<iframe src="//www.slideshare.net/slideshow/embed_code/40267824" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/dmytro-chyzhykov/testing-web-apps-with-spring-framework" title="Testing web apps with spring framework" target="_blank">Testing web apps with spring framework</a> </strong> from <strong><a href="//www.slideshare.net/dmytro-chyzhykov" target="_blank">dmytro-chyzhykov</a></strong> </div>
+
+## Slides
+[Testing Web Apps with Spring Framework](https://www.slideshare.net/dmytro-chyzhykov/testing-web-apps-with-spring-framework)
+
+[![Testing Web Apps with Spring Framework Slides](http://image.slidesharecdn.com/testingwebappswithspringframework-141014145311-conversion-gate01/95/testing-web-apps-with-spring-framework-1-638.jpg)](http://www.slideshare.net/dmytro-chyzhykov/testing-web-apps-with-spring-framework)
+
+
+## Code Examples
+
+### Domain
+[Channel](https://github.com/ffbit/spring-mvc-test-framework-examples/blob/master/src/main/java/ua/org/javaday/spring/mvc/domain/Channel.java)
+
+### DAO
+[ChannelRepository](https://github.com/ffbit/spring-mvc-test-framework-examples/blob/master/src/main/java/ua/org/javaday/spring/mvc/dao/ChannelRepository.java)
+
+### Subject Under Test
+[ChannelController](https://github.com/ffbit/spring-mvc-test-framework-examples/blob/master/src/main/java/ua/org/javaday/spring/mvc/rest/ChannelController.java)
+
+[ChannelNotFoundException](https://github.com/ffbit/spring-mvc-test-framework-examples/blob/master/src/main/java/ua/org/javaday/spring/mvc/rest/exception/ChannelNotFoundException.java)
+
+
+## Test Suites
+
+Pure Unit Test [ChannelControllerTest](https://github.com/ffbit/spring-mvc-test-framework-examples/blob/master/src/test/java/ua/org/javaday/spring/mvc/rest/ChannelControllerTest.java)
+
+Standalone Controller Integration Test [ChannelControllerStandaloneIT](https://github.com/ffbit/spring-mvc-test-framework-examples/blob/master/src/test/java/ua/org/javaday/spring/mvc/rest/ChannelControllerStandaloneIT.java) 
+
+Web App Context Integration Test [ChannelControllerWebAppIT](https://github.com/ffbit/spring-mvc-test-framework-examples/blob/master/src/test/java/ua/org/javaday/spring/mvc/rest/ChannelControllerWebAppIT.java)
