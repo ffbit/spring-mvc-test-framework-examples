@@ -19,10 +19,21 @@
 [ChannelNotFoundException](https://github.com/ffbit/spring-mvc-test-framework-examples/blob/master/src/main/java/ua/org/javaday/spring/mvc/rest/exception/ChannelNotFoundException.java)
 
 
-## Test Suites
+### Test Suites
 
 Pure Unit Test [ChannelControllerTest](https://github.com/ffbit/spring-mvc-test-framework-examples/blob/master/src/test/java/ua/org/javaday/spring/mvc/rest/ChannelControllerTest.java)
 
 Standalone Controller Integration Test [ChannelControllerStandaloneIT](https://github.com/ffbit/spring-mvc-test-framework-examples/blob/master/src/test/java/ua/org/javaday/spring/mvc/rest/ChannelControllerStandaloneIT.java) 
 
 Web App Context Integration Test [ChannelControllerWebAppIT](https://github.com/ffbit/spring-mvc-test-framework-examples/blob/master/src/test/java/ua/org/javaday/spring/mvc/rest/ChannelControllerWebAppIT.java)
+
+
+## How to run tests
+
+### Gradle
+
+    ./gradlew test
+
+### Apache Maven
+
+    mvn integration-test
